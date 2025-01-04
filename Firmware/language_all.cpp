@@ -4040,23 +4040,6 @@ const char * const WELCOME_MSG_LANG_TABLE[LANG_NUM] PROGMEM = {
 	WELCOME_MSG_DE
 };
 
-const char MSG_LEDSTRIP_MENU_LANG_EN[] PROGMEM = "LED Strip";
-const char * const MSG_LEDSTRIP_MENU_LANG_TABLE[1] PROGMEM = {
-	MSG_LEDSTRIP_MENU_LANG_EN
-};
-
-const char MSG_LEDSTRIP_ON_LANG_EN[] PROGMEM = "LED Strip ON";
-const char * const MSG_LEDSTRIP_ON_LANG_TABLE[1] PROGMEM = {
-	MSG_LEDSTRIP_ON_LANG_EN
-};
-
-const char MSG_LEDSTRIP_OFF_LANG_EN[] PROGMEM = "LED Strip OFF";
-const char * const MSG_LEDSTRIP_OFF_LANG_TABLE[1] PROGMEM = {
-	MSG_LEDSTRIP_OFF_LANG_EN
-};
-
-
-
 
 char langbuffer[LCD_WIDTH+1];
 char* CAT2(const char *s1,const char *s2) {

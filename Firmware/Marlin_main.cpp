@@ -871,14 +871,6 @@ void setup_photpin()
   #endif
 }
 
-void setup_ledstrip()
-{
-  #if defined(LED_STRIP_PIN) && LED_STRIP_PIN > -1
-    SET_OUTPUT(LED_STRIP_PIN);
-    WRITE(LED_STRIP_PIN, LOW);
-  #endif
-}
-
 void setup_powerhold()
 {
   #if defined(SUICIDE_PIN) && SUICIDE_PIN > -1
@@ -1030,11 +1022,10 @@ void setup()
 {
 	lcd_init();
      Sound_Init();
-	lcd_print_at_PGM(0, 1, PSTR("  The Q Continuum   "));
+	lcd_print_at_PGM(0, 1, PSTR("   Original Prusa   "));
 	lcd_print_at_PGM(0, 2, PSTR("    3D  Printers    "));
 	setup_killpin();
 	setup_powerhold();
-  setup_ledstrip();
 	farm_mode = eeprom_read_byte((uint8_t*)EEPROM_FARM_MODE);
 	EEPROM_read_B(EEPROM_FARM_NUMBER, &farm_no);
 	if ((farm_mode == 0xFF && farm_no == 0) || ((uint16_t)farm_no == 0xFFFF))
@@ -1282,7 +1273,7 @@ if((eSoundMode==e_SOUND_MODE_LOUD)||(eSoundMode==e_SOUND_MODE_ONCE))
   
 #endif //DEBUG_DISABLE_STARTMSGS
   lcd_update_enable(true);
-  
+
   // Store the currently running firmware into an eeprom,
   // so the next time the firmware gets updated, it will know from which version it has been updated.
   update_current_firmware_version_to_eeprom();

@@ -106,7 +106,3 @@ define MSG_ZPROBE_ZOFFSET                  "Z Offset"
 +define MSG_BABYSTEP_X                      "Babystep X"
 +define MSG_BABYSTEP_Y                      "Babystep Y"
 +define MSG_RECTRACT                        "Rectract"
-
-define MSG_LEDSTRIP_MENU					"LED strip"
-define MSG_LEDSTRIP_ON						"LED strip ON"
-define MSG_LEDSTRIP_OFF					    "LED strip OFF"

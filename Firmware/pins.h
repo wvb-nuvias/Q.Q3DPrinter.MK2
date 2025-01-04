@@ -44,8 +44,7 @@
   #define TEMP_2_PIN -1
   
 #ifndef DISABLE_MAX_ENDSTOPS
-  //Q change : disable the pin in any case (X_MAX_PIN was 30)
-  #define X_MAX_PIN -1
+  #define X_MAX_PIN 30
   #define Z_MAX_PIN 23
   #define Y_MAX_PIN 24
 #else
@@ -62,13 +61,6 @@
   #define X_MIN_PIN -1
   #define Y_MIN_PIN -1
   #define Z_MIN_PIN -1
-#endif
-
-//Q change Added parameter for DISABLE/ENABLE LED_STRIP
-#ifndef DISABLE_LED_STRIP
-  #define LED_STRIP_PIN 30
-#else
-  #define LED_STRIP_PIN -1
 #endif
 
 

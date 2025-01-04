@@ -10,9 +10,6 @@
 #define FW_PRUSA3D_MAGIC "PRUSA3DFW"
 #define FW_PRUSA3D_MAGIC_LEN 10
 
-#define FW_DEV_VERSION FW_VERSION_GOLD
-#define FW_REPOSITORY "Prusa3d"
-
 #include "eeprom.h"
 
 // This configuration file contains the basic settings.
@@ -665,14 +662,6 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 //When using an LCD, uncomment the line below to display the Filament sensor data on the last line instead of status.  Status will appear for 5 sec.
 //#define FILAMENT_LCD_DISPLAY
 
-//===========================================================================
-//=============================LED Strip Settings============================
-//===========================================================================
-
-//Added by Q
-//#define DISABLE_LED_STRIP     //uncomment this if you do not have a LED strip
-#define LED_STRIP_ON  255
-#define LED_STRIP_OFF 0
 
 // Calibration status of the machine, to be stored into the EEPROM,
 // (unsigned char*)EEPROM_CALIBRATION_STATUS
