@@ -1,0 +1,61 @@
+Finishing MK2 Printer enclosure
+-------------------------------
+
+modification to firmware I want to make:
+--------------------------
+disable 
+
+in pins.h
+
+#define X_MAX_PIN 30 - define this one as (pin 30) as LED_STRIP_PIN, set this always to -1 (even when max detectors are enabled)
+#define Z_MAX_PIN 23
+#define Y_MAX_PIN 24
+
+in configuration.h
+
+DISABLE_LED_STRIP	parameter to DISABLE led strip in menu
+LED_STRIP_PIN 		set to 30
+LED_STRIP_ON		true/false - default false 
+
+in language_all.h & language_common.h
+
+define MSG_LEDSTRIP_MENU	"LED strip"
+define MSG_LEDSTRIP_ON		"LED strip ON"
+define MSG_LEDSTRIP_OFF		"LED strip OFF"
+
+-----------------------------------------------------
+
+lookup
+
+Add LED Strip ON/OFF into menu
+set pin 30 to high/low (val 255/0)
+
+
+Set pin 30 to high when start printing, set pin 30 low when stop printing
+
+------------------------------------------------------
+make an entry in the menu only for LED Strip
+	in submenu - 
+
+------------------------------------------------------
+
+solder a 3 pin connector to led strip, use signal and ground (signal is left, ground is middle right is 5V
+
+--------------------------------------------------------
+
+lookup
+
+when Thermal runaway, pause the printer in stead of stopping the printer
+
+lookup pause method
+lookup thermal runaway method
+
+------------------------------------------------------
+
+upload firmware and test
+
+1) 3D design 2 holders from the filament guide to hold a bar where to stick the led lamp on (standalone)... or stick led lamp on the ikea furniture enclosure (make it be able to close and hold the strip in a bar c channel, held by the holders, or screwed in top of enclosure... make sure connector can get extended)
+2) make it possible to disconnect printer hardware from electronics
+3) 3D design "electronics to external plate", that is mounteable inside enclosure (but detachable easy from enclosure and printer) 
+make a seperate raspberry pi ->3<- (use the old ones for this, and have docker with octopi, motioneye etc on it.  Have it on Wifi
+
