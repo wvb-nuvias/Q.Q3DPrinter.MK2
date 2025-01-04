@@ -1034,7 +1034,7 @@ void setup()
 	lcd_print_at_PGM(0, 2, PSTR("    3D  Printers    "));
 	setup_killpin();
 	setup_powerhold();
-  //setup_ledstrip();
+  setup_ledstrip();
 	farm_mode = eeprom_read_byte((uint8_t*)EEPROM_FARM_MODE);
 	EEPROM_read_B(EEPROM_FARM_NUMBER, &farm_no);
 	if ((farm_mode == 0xFF && farm_no == 0) || ((uint16_t)farm_no == 0xFFFF))

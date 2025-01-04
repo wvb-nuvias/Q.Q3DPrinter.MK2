@@ -25,17 +25,59 @@ define MSG_LEDSTRIP_OFF		"LED strip OFF"
 
 -----------------------------------------------------
 
-lookup
+added file ledstrip.cpp
+
+#include "Configuration.h"
+#include "ledstrip.h"
+#include "fastio.h"
+#include "pins.h"
+
+bool ledstripon = false;
+
+void setledstripoff() {
+  // Turn off the LED strip
+  WRITE(LED_STRIP_PIN, LOW);
+  ledstripon = false;
+}
+
+void setledstripon() {
+  // Turn on the LED strip
+  WRITE(LED_STRIP_PIN, HIGH);
+  ledstripon = true;
+}
+---------------------------------------------------
+added file ledstrip.h
+
+#ifndef LEDSTRIP_H
+#define LEDSTRIP_H
+
+extern bool ledstripon;
+
+void setledstripoff();
+void setledstripon();
+
+#endif // LEDSTRIP_H
+
+-----------------------------------------------------
 
 Add LED Strip ON/OFF into menu
-set pin 30 to high/low (val 255/0)
+
+in ultralcd.cpp (add ledstrip.h in using)
+
+static void lcd_ledstrip_menu()
+{
+	START_MENU();
+	MENU_ITEM(back, MSG_SETTINGS, lcd_settings_menu);
+	if (ledstripon) {
+		MENU_ITEM(function, MSG_LEDSTRIP_OFF, setledstripoff);
+	} else {
+		MENU_ITEM(function, MSG_LEDSTRIP_ON, setledstripon);
+	}
+	END_MENU();
+}
 
 
 Set pin 30 to high when start printing, set pin 30 low when stop printing
-
-------------------------------------------------------
-make an entry in the menu only for LED Strip
-	in submenu - 
 
 ------------------------------------------------------
 
